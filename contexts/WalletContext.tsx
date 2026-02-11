@@ -1,5 +1,10 @@
 'use client';
 
+// wallet context - wraps kasware extension state for the whole app
+// checks if extension is installed, handles connect/disconnect,
+// and listens for account or balance changes
+// demo mode = fake wallet with 500 KAS for testing without extension
+
 import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
 import { isKaswareInstalled, connectWallet, getBalance, getNetwork, getAccounts, onAccountsChanged, onBalanceChanged, removeAccountsListener, removeBalanceListener } from '@/lib/kaspa/wallet';
 
@@ -44,7 +49,7 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
     const [state, setState] = useState<WalletState>(defaultWalletState);
     const mountedRef = useRef(true);
 
-    // Check if Kasware is installed on mount
+    // small delay - kasware extension needs time to inject window.kasware
     useEffect(() => {
         mountedRef.current = true;
 
@@ -81,7 +86,7 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
         };
     }, []);
 
-    // Set up event listeners
+    // listen for wallet changes (user switches account, balance updates, etc)
     useEffect(() => {
         if (!state.isConnected || state.demoMode) return;
 

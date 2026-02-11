@@ -1,6 +1,6 @@
-// Kaspa REST API Client
-// Testnet: https://api-tn10.kaspa.org
-// Mainnet: https://api.kaspa.org
+// kaspa rest api client - read-only queries (balance, utxos, tx info)
+// writing (sending kas) goes through kasware extension instead
+// testnet 10: api-tn10.kaspa.org | explorer: tn10.kaspa.stream
 
 const TESTNET_API = 'https://api-tn10.kaspa.org';
 const MAINNET_API = 'https://api.kaspa.org';
@@ -98,12 +98,12 @@ export function getExplorerTxUrl(txId: string, network: string = 'testnet-10'): 
     if (network.includes('mainnet')) {
         return `https://explorer.kaspa.org/txs/${txId}`;
     }
-    return `https://explorer-tn10.kaspa.org/txs/${txId}`;
+    return `https://tn10.kaspa.stream/txs/${txId}`;
 }
 
 export function getExplorerAddrUrl(address: string, network: string = 'testnet-10'): string {
     if (network.includes('mainnet')) {
         return `https://explorer.kaspa.org/addresses/${address}`;
     }
-    return `https://explorer-tn10.kaspa.org/addresses/${address}`;
+    return `https://tn10.kaspa.stream/addresses/${address}`;
 }

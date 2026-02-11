@@ -1,5 +1,8 @@
-// KaspaFlow Stream Engine
-// Manages the lifecycle of payment streams with micro-transaction scheduling
+// stream engine - handles scheduling micro-txs at intervals
+// basically: user sets amount + duration, we split it into small chunks
+// and send them one by one using kasware wallet
+// sompi = smallest kaspa unit (like satoshi). 1 KAS = 100M sompi
+// demo mode skips real txs and fakes the ids for testing
 
 import { PaymentStream, StreamCreateConfig, StreamTransaction, StreamStatus } from './types';
 import { generateId, kasToSompi, calculateFlowRate, SOMPI_PER_KAS } from '../utils';
@@ -14,7 +17,7 @@ function getNextColor(): string {
     return color;
 }
 
-// Active interval references
+// keep track of running intervals so we can stop them on pause/cancel
 const activeIntervals: Map<string, ReturnType<typeof setInterval>> = new Map();
 
 export function createStream(
@@ -53,6 +56,8 @@ export function createStream(
 
 export type StreamUpdateCallback = (streamId: string, updates: Partial<PaymentStream>) => void;
 
+// kicks off the stream - sets up interval to send micro-txs
+// in demo mode we just fake the tx id instead of hitting kasware
 export async function startStream(
     stream: PaymentStream,
     onUpdate: StreamUpdateCallback,
@@ -137,6 +142,7 @@ export async function startStream(
     activeIntervals.set(stream.id, intervalId);
 }
 
+// pause - save how much time has passed so we can resume later
 export function pauseStream(streamId: string, onUpdate: StreamUpdateCallback, stream: PaymentStream): void {
     stopInterval(streamId);
     const now = Date.now();
@@ -151,6 +157,7 @@ export function pauseStream(streamId: string, onUpdate: StreamUpdateCallback, st
     });
 }
 
+// cancel - stop sending. already-sent txs are on-chain and cant be undone
 export function cancelStream(streamId: string, onUpdate: StreamUpdateCallback): void {
     stopInterval(streamId);
     onUpdate(streamId, {
@@ -174,7 +181,9 @@ export function cleanupAllStreams(): void {
     activeIntervals.clear();
 }
 
-// Storage helpers
+// save/load streams from localStorage so they survive page refresh
+// if a stream was active when page closed, mark it paused
+// (intervals dont persist across reloads obviously)
 const STORAGE_KEY = 'kaspaflow_streams';
 
 export function saveStreams(streams: PaymentStream[]): void {

@@ -1,5 +1,7 @@
-// Kasware Wallet API Wrapper
-// Docs: https://docs.kasware.xyz
+// wrapper for kasware browser extension (window.kasware)
+// handles connect, send, balance checks, event listeners
+// all funcs check if extension exists first to avoid crashes
+// docs: https://docs.kasware.xyz
 
 export interface KaswareAPI {
     requestAccounts(): Promise<string[]>;

@@ -1,5 +1,10 @@
 'use client';
 
+// particle animation for showing kas flowing between addresses
+// uses canvas api for perf - dom would lag with 200+ elements
+// particles go left to right, speed/count based on flow rate
+// glow effect = canvas shadowBlur
+
 import React, { useRef, useEffect, useCallback } from 'react';
 import { PaymentStream } from '@/lib/stream/types';
 import { sompiToKas, truncateAddress } from '@/lib/utils';
