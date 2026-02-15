@@ -1,4 +1,4 @@
-// KaspaFlow Utility Functions
+// StreamKAS Utility Functions
 
 // 1 KAS = 100,000,000 sompi
 export const SOMPI_PER_KAS = 100_000_000;

@@ -1,4 +1,4 @@
-// KaspaFlow Stream Data Model
+// StreamKAS Stream Data Model
 
 export type StreamStatus = 'active' | 'paused' | 'completed' | 'cancelled' | 'error' | 'pending';
 

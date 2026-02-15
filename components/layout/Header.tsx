@@ -16,7 +16,7 @@ export default function Header() {
                 <Link href="/" className="logo" style={{ textDecoration: 'none' }}>
                     <div className="logo-icon">⚡</div>
                     <span className="logo-text">
-                        Kaspa<span className="highlight">Flow</span>
+                        Stream<span className="highlight">KAS</span>
                     </span>
                 </Link>
 

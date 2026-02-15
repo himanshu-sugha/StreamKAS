@@ -42,7 +42,7 @@ export default function HomePage() {
             </>
           )}
           <a
-            href="https://github.com/himanshu-sugha/KaspaFlow"
+            href="https://github.com/himanshu-sugha/StreamKAS"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-outline btn-lg"
@@ -71,14 +71,14 @@ export default function HomePage() {
       <section style={{ paddingBottom: 'var(--space-4xl)' }}>
         <div className="section-title">
           <h2>Why Streaming Payments?</h2>
-          <p>Traditional payments are discrete. KaspaFlow makes them continuous.</p>
+          <p>Traditional payments are discrete. StreamKAS makes them continuous.</p>
         </div>
         <div className="features-grid">
           <div className="card feature-card">
             <div className="feature-icon teal">💸</div>
             <h3>Per-Second Payments</h3>
             <p>
-              Define a total amount and duration — KaspaFlow sends micro-transactions
+              Define a total amount and duration — StreamKAS sends micro-transactions
               automatically, every few seconds. Watch money flow in real-time.
             </p>
           </div>
@@ -121,7 +121,7 @@ export default function HomePage() {
             <h3>Create a Stream</h3>
             <p>
               Set recipient address, total amount, and duration.
-              KaspaFlow calculates the flow rate automatically.
+              StreamKAS calculates the flow rate automatically.
             </p>
           </div>
           <div className="card step-card">
@@ -165,7 +165,7 @@ export default function HomePage() {
         <div className="card card-glow" style={{ padding: 'var(--space-3xl)', maxWidth: '600px', margin: '0 auto' }}>
           <h2 style={{ marginBottom: 'var(--space-md)' }}>Ready to Stream?</h2>
           <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-xl)' }}>
-            KaspaFlow is open source and runs on Kaspa testnet. Try it now — no real funds needed.
+            StreamKAS is open source and runs on Kaspa testnet. Try it now — no real funds needed.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-md)', flexWrap: 'wrap' }}>
             {isConnected ? (

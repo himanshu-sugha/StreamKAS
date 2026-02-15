@@ -255,7 +255,7 @@ function PayPageInner() {
                     color: 'var(--text-muted)',
                 }}>
                     🔒 Payments are sent directly from your wallet to the recipient.<br />
-                    KaspaFlow never has custody of your funds.
+                    StreamKAS never has custody of your funds.
                 </div>
             </div>
         </div>

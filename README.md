@@ -1,13 +1,13 @@
-# KaspaFlow
+# StreamKAS
 
 > **Money that flows like water.**
 > Real-time streaming payments powered by Kaspa's 10 BPS BlockDAG.
 
 ---
 
-## What is KaspaFlow?
+## What is StreamKAS?
 
-KaspaFlow is a **real-time payment streaming platform** that:
+StreamKAS is a **real-time payment streaming platform** that:
 
 1. **Streams KAS by the second** - continuous micro-transactions, not lump sums
 2. **AI-powered stream creation** - type natural language commands to create streams
@@ -51,7 +51,7 @@ KaspaFlow is a **real-time payment streaming platform** that:
 
 ```
 +-------------------------------------------------------------+
-|                        KaspaFlow                            |
+|                        StreamKAS                            |
 +-------------------------------------------------------------+
 |  User types: "stream 50 KAS to kaspatest:qz0... over 10m"  |
 +-------------------------------------------------------------+
@@ -121,7 +121,7 @@ The AI Stream Creator parses plain English into stream parameters using client-s
 
 ```
 +-------------------------------------------------------------+
-|                       KaspaFlow                             |
+|                       StreamKAS                             |
 +-------------------------------------------------------------+
 |  UI Layer                                                   |
 |  [Dashboard] [Pay] [Payroll] [Analytics] [History]          |
@@ -216,8 +216,8 @@ src/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/himanshu-sugha/KaspaFlow.git
-cd KaspaFlow
+git clone https://github.com/himanshu-sugha/StreamKAS.git
+cd StreamKAS
 
 # 2. Install dependencies
 npm install
