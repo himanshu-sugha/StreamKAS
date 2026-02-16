@@ -206,6 +206,23 @@ The NLP Stream Creator parses plain English into stream parameters using **clien
 | State | React Context API + localStorage |
 
 ---
+## Project Gallery 
+
+![1.png](https://cdn.dorahacks.io/static/files/19c63c5f8fffe10234435f64094842e6.png)Dashboard![2.png](https://cdn.dorahacks.io/static/files/19c63c634b88bf5a442ccc2452dbdc35.png)
+
+Ai Stream Creator
+
+![3.png](https://cdn.dorahacks.io/static/files/19c63c6cf9b08642fc214284723a75d3.png)
+
+Stream flow
+
+![4.png](https://cdn.dorahacks.io/static/files/19c63c702e4eae3d4292a0c45908f939.png)
+
+Request link
+
+![5.png](https://cdn.dorahacks.io/static/files/19c63c75fb8f30f59dfd812469a96c6a.png)
+
+Multiple -receipt payroll
 
 ## Quick Start
 ```bash
